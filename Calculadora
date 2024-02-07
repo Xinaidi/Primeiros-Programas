@@ -1,0 +1,40 @@
+package calculadora;
+import javax.swing.JOptionPane;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+        String firstNumber = JOptionPane.showInputDialog("Digite o primeiro número: ");
+        String secondNumber = JOptionPane.showInputDialog("Digite o segundo número: ");
+
+        float number1 = Integer.parseInt(firstNumber);
+        float number2 = Integer.parseInt(secondNumber);
+        
+        String express = JOptionPane.showInputDialog("Escolha: 1= Adição, 2= Subtração, 3= Multiplicação, 4= Divisão ");
+        int exp = Integer.parseInt(express);
+        
+        switch (exp){
+            case 1: 
+                float soma = number1 + number2 ;
+        
+                JOptionPane.showMessageDialog(null, "A soma é: " +soma, "Adição", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 2:
+                float sub = number1 + number2;
+                JOptionPane.showMessageDialog(null, "A subtração é: " +sub, "Subtração", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 3:
+                float nxn = number1 * number2;
+                JOptionPane.showMessageDialog(null, "O produto é: " +nxn, "Multiplicação", JOptionPane.PLAIN_MESSAGE);
+                break;
+            case 4:
+                float div = number1 / number2;
+                JOptionPane.showMessageDialog(null, "O quociente é: " +div, "Divisão", JOptionPane.PLAIN_MESSAGE);
+                break;
+                
+
+
+                
+        }
+    }
+}
