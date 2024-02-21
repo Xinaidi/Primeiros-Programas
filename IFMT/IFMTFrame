@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class IFMTFrame extends JFrame {
+
+    public IFMTFrame() {
+        // Configurar o frame
+        setTitle("IFMT Logo");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 300); // Defina o tamanho do frame conforme necessário
+
+        // Configurar o layout
+        setLayout(new BorderLayout());
+
+        // Adicionar o JLabel com a logo do IFMT e a descrição
+        ImageIcon ifmtLogo = new ImageIcon("C:\Users\Aluno\Desktop\IFMT\ifmt.png"); // Substitua pelo caminho real da imagem
+        JLabel ifmtLabel = new JLabel("INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DE MATO GROSSO", ifmtLogo, JLabel.CENTER);
+        ifmtLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        ifmtLabel.setHorizontalTextPosition(JLabel.CENTER);
+
+        // Adicionar o JLabel ao frame
+        add(ifmtLabel, BorderLayout.CENTER);
+
+        // Tornar o frame visível
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        // Criar uma instância do IFMTFrame
+        SwingUtilities.invokeLater(() -> new IFMTFrame());
+    }
+}
