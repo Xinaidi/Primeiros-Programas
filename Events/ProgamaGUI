@@ -1,0 +1,42 @@
+package events;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ProgramaGUI extends JFrame {
+
+    private JButton botao;
+    private JLabel rotulo;
+
+    public ProgramaGUI() {
+        // Configuração do JFrame
+        super("Exemplo de Programa GUI");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(300, 200);
+        setLayout(new FlowLayout());
+
+        // Inicialização dos componentes gráficos
+        botao = new JButton("Clique aqui");
+        rotulo = new JLabel("Aguardando clique");
+
+        // Adicionando componentes ao JFrame
+        add(botao);
+        add(rotulo);
+
+        // Adicionando listener ao botão
+        botao.addActionListener(new BotaoClickListener());
+
+        // Tornando o JFrame visível
+        setVisible(true);
+    }
+
+    // Classe interna para tratar eventos do botão
+    private class BotaoClickListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            rotulo.setText("Botão clicado!");
+        }
+    }
+
+}
